@@ -1,6 +1,21 @@
 package com.order.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class OrderLineitem {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer orderLineitemId;
+	
+	@ManyToOne
+	private OrderSummary orderSummary;
+	
 	private Integer productId;
 	private String productName;
 	private Integer quantity;
@@ -28,6 +43,19 @@ public class OrderLineitem {
 	}
 	public void setPrice(Float price) {
 		this.price = price;
+	}
+	
+	public Integer getOrderLineitemId() {
+		return orderLineitemId;
+	}
+	public void setOrderLineitemId(Integer orderLineitemId) {
+		this.orderLineitemId = orderLineitemId;
+	}
+	public OrderSummary getOrderSummary() {
+		return orderSummary;
+	}
+	public void setOrderSummary(OrderSummary orderSummary) {
+		this.orderSummary = orderSummary;
 	}
 	@Override
 	public String toString() {
