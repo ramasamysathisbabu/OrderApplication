@@ -31,7 +31,7 @@ public class OrderSummaryController {
 	}
 	
 	@RequestMapping(value = "/orders/{orderid}", method = RequestMethod.GET)
-	public ResponseEntity<List<OrderSummary>> getAllOrderSummary(@PathVariable Integer orderid){
-		return new ResponseEntity<>(orderSummaryService.getAllOrders(), HttpStatus.OK);
+	public ResponseEntity<OrderSummary> getSingleOrderSummary(@PathVariable Integer orderid){
+		return new ResponseEntity<>(orderSummaryService.getSingleOrderById(orderid), HttpStatus.OK);
 	}	
 }
