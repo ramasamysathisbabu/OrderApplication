@@ -7,19 +7,21 @@ URL: http://localhost:8080/orders
 Request Payload:
 ```json
 {
-    "orderNumber" : 1,
+
     "orderLineItems" : [
         {
             "productId" : 1,
             "productName": "Apple",
-            "quantity" : 1,
-            "price" : 0.60
+            "quantity" : 5,
+            "price" : 0.60,
+            "offer" : "BOGO"
         },
         {
             "productId" : 2,
             "productName": "Orange",
-            "quantity" : 3,
-            "price" : 0.25
+            "quantity" : 2,
+            "price" : 0.25,
+            "offer" : "3FOR2"
         }
     ]
 }

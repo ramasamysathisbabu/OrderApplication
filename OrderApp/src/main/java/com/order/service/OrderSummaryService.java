@@ -25,6 +25,7 @@ public class OrderSummaryService {
 				.mapToDouble(item -> item.getQuantity() * ((double) item.getPrice())).sum();
 
 		orderSummary.setTotalCost(ServiceUtil.getFormattedFloatingValue(orderTotalValue));
+		ServiceUtil.applyOffer(orderSummary.getOrderLineItems());
 		return orderSummaryRepository.save(orderSummary);
 	}
 	

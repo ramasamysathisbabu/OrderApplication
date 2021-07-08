@@ -20,6 +20,8 @@ public class OrderLineitem {
 	private String productName;
 	private Integer quantity;
 	private Float price;
+	private String offer;
+	
 	public Integer getProductId() {
 		return productId;
 	}
@@ -56,6 +58,12 @@ public class OrderLineitem {
 	}
 	public void setOrderSummary(OrderSummary orderSummary) {
 		this.orderSummary = orderSummary;
+	}
+	public String getOffer() {
+		return offer;
+	}
+	public void setOffer(String offer) {
+		this.offer = offer;
 	}
 	@Override
 	public String toString() {
